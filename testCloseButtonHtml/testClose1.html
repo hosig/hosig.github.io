@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+ <html lang='ja'>
+ <head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>元画面</title>
+ </head>
+ <body>
+ これは元画面なので、閉じるボタンは効きません。<BR>
+ <a href="testSub1.html" target="_blank">linkでpopupされたページはボタンで閉じれる</a><br>
+ <a href="testSub1.html" target="_top">linkで遷移するページはボタンで閉じれない</a><br><br>
+ 
+  <button onClick="openWindow()">open</button>
+  <button onClick="closeWindow()">close</button>
+  <button onClick="closeWindow2()">close(裏技、閉じれるけど、新しいタブが残ってしまう)</button>
+ </body>
+ </html>
+
+
+<script>
+ 
+ const openWindow = () => {
+  win = window.open("testSub1.html")
+ }
+
+ const closeWindow = () => {
+  window.close()
+ }
+ const closeWindow2 = () => {
+  window.open('about:blank','_self').close()
+ }
+</script>
